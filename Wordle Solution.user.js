@@ -27,15 +27,15 @@ function runMouseOver(timer) {
     clearInterval(timer);
     const solution = (JSON.parse(localStorage['nyt-wordle-state']).solution).toUpperCase();
     const header = document.getElementsByTagName("header")[0];
-    const logo = header.firstElementChild.nextElementSibling.innerText
+    let text = header.firstElementChild.nextElementSibling;
+    const logo = text.innerText
 
     header.addEventListener("mouseover", function (event) {
-        header.firstElementChild.nextElementSibling.innerText = solution;
+        text.innerText = solution;
         return
     })
 
     header.addEventListener("mouseout", function (event) {
-        header.firstElementChild.nextElementSibling.innerText = logo;
+        text.innerText = logo;
     })
-
 }
